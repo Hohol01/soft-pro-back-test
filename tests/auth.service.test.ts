@@ -20,7 +20,7 @@ describe('AuthService', () => {
     it('реєструє користувача з хешованим паролем', async () => {
         const user = await registerUser('test@mail.com', 'pass1234', 'Client')
         expect(user.email).toBe('test@mail.com')
-        expect(user.password).not.toBe('pass1234') // має бути хешований
+        expect(user.password).not.toBe('pass1234')
     })
 
     it('авторизує користувача з вірним паролем', async () => {
