@@ -14,9 +14,9 @@ Client <---> Fastify REST API <---> MongoDB
 
 ## ⚙️ Запуск локально
 ```bash
-git clone https://github.com/your-username/booking-backend-starter.git
-cd booking-backend-starter
-cp .env.example .env
+git clone https://github.com/Hohol01/soft-pro-back-test.git
+cd soft-pro-back-test
+cp .env .env
 docker-compose up --build
 ```
 
