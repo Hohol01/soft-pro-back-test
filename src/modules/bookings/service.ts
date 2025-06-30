@@ -6,7 +6,7 @@ export const createBooking = async (data: {
     clientId: string
     startTime: Date
 }) => {
-    const service: IService = await ServiceModel.findById(data.serviceId)
+    const service = await ServiceModel.findById(data.serviceId)
     if (!service) throw new Error('Service not found')
 
     const endTime = new Date(new Date(data.startTime).getTime() + service.duration * 60000)
@@ -31,6 +31,5 @@ export const createBooking = async (data: {
 }
 
 export const updateBookingStatus = async (id: string, status: 'confirmed' | 'cancelled') => {
-
     return await BookingModel.findByIdAndUpdate(id, {status}, {new: true})
 }

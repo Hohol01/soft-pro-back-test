@@ -27,7 +27,7 @@ export const authenticateUser = async (
     return user
 }
 
-export const generateTokens = (user: { _id: any, role: string }) => {
+export const generateTokens =  (user: { _id: any, role: string }) => {
     const access =
         jwt.sign({id: user._id, role: user.role},
             JWT_SECRET,

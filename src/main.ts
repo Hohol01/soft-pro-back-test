@@ -8,7 +8,6 @@ import {setupRedis} from './core/redis'
 import {setupQueue} from './core/queue'
 import {registerPlugins} from './core/plugins'
 import bookingRoutes from "./modules/bookings/routes";
-import availabilityRoutes from "../availability/routes";
 
 dotenv.config()
 
@@ -23,7 +22,6 @@ const start = async () => {
     app.register(authRoutes, {prefix: '/auth'})
     app.register(serviceRoutes, {prefix: '/services'})
     app.register(bookingRoutes, {prefix: '/bookings'})
-    app.register(availabilityRoutes, {prefix: '/availability'})
     try {
         await connectDB()
         await setupRedis()

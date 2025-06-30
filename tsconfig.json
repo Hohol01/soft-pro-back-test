@@ -2,13 +2,16 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
-    "rootDir": "./src",
+    "rootDir": "src",
     "outDir": "./dist",
     "esModuleInterop": true,
-    "moduleResolution": "node",          // Важно для поиска node_modules
-    "resolveJsonModule": true,           // Если будешь импортировать json
-    "skipLibCheck": true,                // Для пропуска проверки типов внешних пакетов
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
-    "types": ["node"]                    // Нужно, чтобы видеть типы Node.js (например process.env)
-  }
+    "types": [
+      "node"
+    ]
+  },
+  "include": ["src/**/*.ts"]
 }

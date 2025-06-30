@@ -1,4 +1,4 @@
-import {InferSchemaType, Model, model, Schema} from "mongoose";
+import {HydratedDocument, InferSchemaType, Model, model, Schema} from "mongoose";
 
 enum Status {
     pending, confirmed, cancelled
@@ -13,5 +13,9 @@ const bookingSchema = new Schema({
     status: {type: String, enum: Object.values(Status), default: Status.pending}
 }, {timestamps: true})
 
-export type IBooking = InferSchemaType<typeof bookingSchema>
-export const BookingModel: Model<IBooking> = model('Booking', bookingSchema)
+
+
+
+type BookingSchemaType = InferSchemaType<typeof bookingSchema>
+export type IBooking = HydratedDocument<BookingSchemaType>
+export const BookingModel: Model<BookingSchemaType> = model('Booking', bookingSchema)

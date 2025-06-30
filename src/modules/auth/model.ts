@@ -1,4 +1,4 @@
-import {Schema, model, Model, InferSchemaType} from 'mongoose'
+import {Schema, model, Model, InferSchemaType, HydratedDocument} from 'mongoose'
 
 const userSchema = new Schema({
     email: { type: String, required: true, unique: true },
@@ -6,5 +6,6 @@ const userSchema = new Schema({
     role: { type: String, enum: ['Client', 'Provider'], required: true },
 }, { timestamps: true })
 
-export type IUser = InferSchemaType<typeof userSchema>
-export const UserModel: Model<IUser> = model('User', userSchema)
+type UserSchemaType = InferSchemaType<typeof userSchema>
+export type IUser = HydratedDocument<UserSchemaType>
+export const UserModel: Model<UserSchemaType> = model('User', userSchema)

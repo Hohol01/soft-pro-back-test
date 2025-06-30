@@ -24,7 +24,7 @@ export const registerPlugins = async (app: FastifyInstance) => {
                     description: 'Enter token as: Bearer <token>'
                 }
             },
-            security: [{ BearerAuth: [] }]  // применяем глобально (можно для отдельных эндпоинтов)
+            security: [{ BearerAuth: [] }]
 
         }
     });
@@ -35,7 +35,6 @@ export const registerPlugins = async (app: FastifyInstance) => {
             docExpansion: 'list',
             deepLinking: false
         },
-        // exposeRoute: true, // НЕ НУЖНО, убираем эту опцию
     });
 
     await app.register(fastifyRateLimit, {
