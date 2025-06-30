@@ -16,7 +16,7 @@ Client <---> Fastify REST API <---> MongoDB
 ```bash
 git clone https://github.com/Hohol01/soft-pro-back-test.git
 cd soft-pro-back-test
-cp .env .env
+cp .env.example .env
 docker-compose up --build
 ```
 
